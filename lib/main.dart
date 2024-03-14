@@ -23,10 +23,16 @@ class MyApp extends StatelessWidget {
         ),
         home: Scaffold(
           appBar: AppBar(
-            title: Text('AppBar'),
+            title: Text('AppBar'), //alt+enter
             backgroundColor: Colors.blue,
           ),
-          body: Text('Body 입니다.'),
+          body: Container(
+            color: Colors.yellow,
+            child: Center(
+              child: Text('Body 입니다.'),
+            ),
+          ),
+
           // BottomNavigationBar
           bottomNavigationBar: BottomNavigationBar(
             items: <BottomNavigationBarItem>[
@@ -45,11 +51,13 @@ class MyApp extends StatelessWidget {
             ],
           ),
 
+          // FloatingActionButton
           floatingActionButton: FloatingActionButton(
-              child: Icon(Icons.access_alarm),
-              onPressed: () => {
-                    print('hello'),
-                  }),
+            child: Icon(Icons.access_alarm),
+            onPressed: () => {
+              print('hello'),
+            },
+          ),
         ));
   }
 }
