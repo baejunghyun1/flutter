@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        fontFamily: "NanumGothic",
         primarySwatch: Colors.blue,
         // backgroundColor: Color.fromARGB(255, 36, 34, 34),
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -40,6 +41,11 @@ class TestScreen extends StatelessWidget {
   final List<Introduction> list = [
     Introduction(
       title: '현재의 나',
+      titleTextStyle: TextStyle(
+          color: Colors.blueGrey,
+          fontSize: 35,
+          fontFamily: "NanumGothic",
+          fontWeight: FontWeight.w800),
       subTitle: '비어있는 박스뿐이지만',
       imageUrl: 'assets/images/빈상자.jpg',
     ),
