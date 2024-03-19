@@ -66,13 +66,13 @@ class TestScreen extends StatelessWidget {
     return IntroScreenOnboarding(
       introductionList: list,
       onTapSkipButton: () {
-        // 마지막페이지가 나오거나 skip을 해서 homepage로 가기전에 isOnboardrd를 true로 바꿔준다.
+        // 마지막페이지가 나오거나 skip을 해서 homepage로 가기전에 isOnboarded 를 true로 바꿔준다.
         prefs.setBool('isOnboarded', true);
         Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) => HomePage(),
-          ), //MaterialPageRoute
+          ),
         );
       },
       // foregroundColor: Colors.red,
