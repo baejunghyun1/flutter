@@ -1,9 +1,12 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'main.dart';
 
 class CatService extends ChangeNotifier {
+  SharedPreferences prefs;
+
   List<String> catImages = [];
 
   //좋아요한 사진들
@@ -11,7 +14,7 @@ class CatService extends ChangeNotifier {
   List<String> favoriteCatImages = [];
 
   // CatService 생성자
-  CatService() {
+  CatService(this.prefs) {
     getRandomCatImages();
     LikesImages();
   }
@@ -42,7 +45,7 @@ class CatService extends ChangeNotifier {
     notifyListeners();
   }
 
-  void LikesImages() async {
+  void LikesImages() {
     final Likes = prefs.getStringList('images');
     if (Likes != null) {
       favoriteCatImages = List.from(Likes);

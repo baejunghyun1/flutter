@@ -6,19 +6,17 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'cat_service.dart';
 import 'like_page.dart';
 
-late SharedPreferences prefs;
-
 void main() async {
   // main() 함수 에서 async 를 쓰려면 필요
   WidgetsFlutterBinding.ensureInitialized();
 
   //Shared_preferences 인스턴스 생성
-  prefs = await SharedPreferences.getInstance();
+  SharedPreferences prefs = await SharedPreferences.getInstance();
 
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => CatService()),
+        ChangeNotifierProvider(create: (context) => CatService(prefs)),
       ],
       child: MyApp(),
     ),
